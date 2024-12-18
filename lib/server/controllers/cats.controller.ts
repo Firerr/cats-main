@@ -11,7 +11,7 @@ import {
 export const getCats = async (req: NextApiRequest, res: NextApiResponse) => {
   // Does not work locally but will on Vercel
   res.setHeader('Cache-Control', 's-maxage=10, stale-while-revalidate');
-
+  console.log('get cats ran')
   const { catId: id } = req.query;
 
   try {

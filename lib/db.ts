@@ -9,6 +9,7 @@ const conn = mongoose
     console.log("DB Connected");
   })
   .catch(function (error) {
+    console.log('line check')
     console.log("Error connecting to DB", error);
   });
 

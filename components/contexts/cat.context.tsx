@@ -40,13 +40,13 @@ const defaultValues: CatsContextInterface = {
 };
 
 let CATS_ENDPOINT = `/api/v1/cats`;
-
+  console.log(typeof window)
 if (typeof window === 'undefined') {
-  CATS_ENDPOINT = process.env.NEXT_PUBLIC_CATS_ENDPOINT!;
+  CATS_ENDPOINT = process.env.NEXT_PUBLIC_CATS_ENDPOINT;
 } else {
   CATS_ENDPOINT = `${window.location.origin}/api/v1/cats`;
 }
-
+console.log(CATS_ENDPOINT, 'CATS END POINT')
 // https://nextjs-fullstack-rest-demo.vercel.app
 export const CatsContext = createContext<CatsContextInterface>(defaultValues);
 

@@ -64,7 +64,7 @@ export async function getServerSideProps({
 }: {
   params: { id: string };
 }) {
-  const Cat = await getCat(params.id);
+  const cat = await getCat(params.id);
   return {
     props: {
       serverData: JSON.parse(JSON.stringify(cat)),

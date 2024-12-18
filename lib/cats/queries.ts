@@ -1,9 +1,11 @@
-import type { CatData, CatUpdateData } from "@/components/forms/cat_form";
-import "@/lib/db";
-import CatBreed from "@/lib/server/breeds/cat.breed";
+import type { CatData, CatUpdateData } from '@/components/forms/cat_form';
+import '@/lib/db';
+import CatBreed from '@/lib/server/breeds/cat.breed';
 
 export const getCatsQuery = async () => {
-  return await CatBreed.find({}).exec();
+  const data = await CatBreed.find({});
+  console.log(data, 'find route ran')
+  return data
 };
 
 export const getCatQuery = async (id: string) => {

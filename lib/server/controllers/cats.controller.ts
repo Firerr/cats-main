@@ -33,8 +33,8 @@ export const addCat = async (req: NextApiRequest, res: NextApiResponse) => {
     return res.status(400).send('NO_NAME_PROVIDED');
   }
 
-  if (!catData.bhp) {
-    return res.status(400).send('NO_BHP_PROVIDED');
+  if (!catData.age) {
+    return res.status(400).send('NO_AGE_PROVIDED');
   }
 
   if (catData.avatar_url === '') {

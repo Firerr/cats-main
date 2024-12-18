@@ -5,13 +5,13 @@ import type Cat from '@/types/Cat';
 
 interface updateFormData {
   name?: string;
-  bhp?: number;
+  age?: number;
   avatar_url?: string;
 }
 
 interface addFormData {
   name: string;
-  bhp: number;
+  age: number;
   avatar_url?: string;
 }
 

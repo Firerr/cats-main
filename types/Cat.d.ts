@@ -1,7 +1,7 @@
 interface Cat {
   _id: string;
   name: string;
-  bhp: number;
+  age: number;
   avatar_url?: string;
 }
 

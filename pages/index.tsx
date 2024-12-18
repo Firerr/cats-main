@@ -58,7 +58,7 @@ const Cats = ({ serverData }: { serverData: Array<Cat> }) => {
   } else {
     component = (
       <List>
-        {data.map(({ name, bhp, avatar_url, _id }) => (
+        {data.map(({ name, age, avatar_url, _id }) => (
           <ListItem key={_id}>
             <ListItemAvatar>
               <Avatar>
@@ -72,7 +72,7 @@ const Cats = ({ serverData }: { serverData: Array<Cat> }) => {
               </Avatar>
             </ListItemAvatar>
             <ListItemText>
-              {name} (BHP: {bhp})
+              {name} (age: {age})
             </ListItemText>
             <IconButton
               aria-label="view"

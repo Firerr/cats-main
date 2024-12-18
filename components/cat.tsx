@@ -12,7 +12,7 @@ import { CatsContext } from '@/components/contexts/cat.context';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 
-const CatItem = ({ cat: { _id, name, bhp, avatar_url } }: CatProps) => {
+const CatItem = ({ cat: { _id, name, age, avatar_url } }: CatProps) => {
   const { deleteCat } = useContext(CatsContext);
   const router = useRouter();
   return (
@@ -33,8 +33,8 @@ const CatItem = ({ cat: { _id, name, bhp, avatar_url } }: CatProps) => {
         </Box>
 
         <Box sx={{ display: 'flex' }}>
-          <Box component="dt">BHP</Box>
-          <Box component="dd">{bhp}</Box>
+          <Box component="dt">age</Box>
+          <Box component="dd">{age}</Box>
         </Box>
       </Box>
       {/* <Link href={`/${_id}`}>View Cat</Link> */}

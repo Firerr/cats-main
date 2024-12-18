@@ -7,7 +7,7 @@ export const catSchema = new Schema({
     type: String,
     required: true,
   },
-  bhp: {
+  age: {
     type: Number,
     required: true,
   },

@@ -9,30 +9,30 @@ import Cat from "@/types/Cat";
 
 const schema = yup.object().shape({
   name: yup.string().max(30).required(),
-  bhp: yup.number().integer().max(5000).required(),
+  age: yup.number().integer().max(5000).required(),
   avatar_url: yup.string(),
 });
 
 export interface formData {
   name: string;
-  bhp: string;
+  age: string;
   avatar_url: string;
 }
 
 export interface CatData {
   name: string;
-  bhp: number;
+  age: number;
   avatar_url?: string;
 }
 export interface CatUpdateData {
   name?: string;
-  bhp: string;
+  age: string;
   avatar_url?: string;
 }
 
-const defaults: { name: string; bhp: string; avatar_url: string } = {
+const defaults: { name: string; age: string; avatar_url: string } = {
   name: "",
-  bhp: "",
+  age: "",
   avatar_url: "",
 };
 
@@ -63,11 +63,11 @@ export default function CatForm({ cat, addCat, updateCat }: CatFormInput) {
   useEffect(() => {
     // console.log('useeffect', cat);
     if (cat) {
-      const {  avatar_url="", bhp, name } = cat;
+      const {  avatar_url="", age, name } = cat;
 
       reset({
         name,
-        bhp: String(bhp),
+        age: String(age),
         avatar_url,
       });
     }
@@ -79,7 +79,7 @@ export default function CatForm({ cat, addCat, updateCat }: CatFormInput) {
 
   const submitFn = (vals: formData) => {
     reset();
-    const data: CatData = { ...vals, bhp: Number(vals.bhp) };
+    const data: CatData = { ...vals, age: Number(vals.age) };
 
     if (cat) {
       updateCat?.(cat._id, data);
@@ -113,17 +113,17 @@ export default function CatForm({ cat, addCat, updateCat }: CatFormInput) {
       <div style={formRowStyle}>
         <Controller
           control={control}
-          name="bhp"
+          name="age"
           defaultValue={""}
           render={({ field }) => (
             <TextField
               type="text"
               fullWidth
-              error={!!errors.bhp}
+              error={!!errors.age}
               {...field}
-              label="bhp"
+              label="age"
               // pattern={/[0-9]{1,4}/}
-              helperText={errors.bhp?.message}
+              helperText={errors.age?.message}
               required
             />
           )}

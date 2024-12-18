@@ -23,7 +23,7 @@ const Cats = ({ serverData }: { serverData: Array<Cat> }) => {
     useContext(CatsContext);
   console.log('context cats', cats);
 
-  let data = cats;
+  let data: Cat[] = cats;
   // add a bit for SSR (will cause hydration error)
   if (typeof window === 'undefined') {
     console.log('SSR cats', serverData);
@@ -47,7 +47,7 @@ const Cats = ({ serverData }: { serverData: Array<Cat> }) => {
     // @ts-ignore
     console.error(
       `'data' must be an array. Instead received ${
-        data.toJSON ? data.toJSON() : data
+        JSON.stringify(data)
       } of type ${data}`,
     );
     component = (
